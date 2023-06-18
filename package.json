@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@amplitude/analytics-browser": "^2.0.0",
+    "@astrojs/image": "^0.17.0",
     "astro": "^2.6.4",
     "sass": "^1.63.4",
+    "sharp": "^0.32.1",
     "tiny-slider": "^2.9.4"
   }
 }

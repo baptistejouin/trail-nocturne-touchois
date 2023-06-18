@@ -15,13 +15,13 @@ import Footer from "../components/Footer.astro";
 		<Info />
 		<Registration />
 		<Gallery />
-		<Partner />
+		<!-- <Partner /> -->
 		<Social />
 	</main>
 	<Footer />
 </Layout>
 
 <script>
-	// import * as amplitude from '@amplitude/analytics-browser';
-	// amplitude.init('e321a1d48c8cc3e3603810646b1a7556');
+	import * as amplitude from "@amplitude/analytics-browser";
+	amplitude.init("e321a1d48c8cc3e3603810646b1a7556");
 </script>

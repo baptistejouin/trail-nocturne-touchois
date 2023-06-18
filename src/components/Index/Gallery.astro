@@ -1,82 +1,41 @@
 ---
 import Anchor from "../Anchor.astro";
+import { Picture } from "@astrojs/image/components";
+
+const galleryPublicPath = [
+	"img/gallery/IMG-1.jpeg",
+	"img/gallery/IMG-2.jpg",
+	"img/gallery/IMG-3.jpg",
+	"img/gallery/IMG-4.jpg",
+	"img/gallery/IMG-5.jpg",
+	"img/gallery/IMG-6.jpeg",
+	"img/gallery/IMG-7.jpg",
+	"img/gallery/IMG-8.jpeg",
+	"img/gallery/IMG-9.jpeg",
+	"img/gallery/IMG-10.jpg",
+	"img/gallery/IMG-11.jpeg",
+	"img/gallery/IMG-12.jpeg",
+];
 ---
 
 <section id="gallery" class="container">
-	<h2><strong>Photos</strong> de 2022</h2>
+	<h2>Le TNT en <strong>images</strong></h2>
 	<div class="photos">
-		<img
-			class="photo js-openEnlarge"
-			src="img/tnt-2019/IMG-1.jpeg"
-			alt="Ravitaillement à mi parcours"
-			loading="lazy"
-		/>
-		<img
-			class="photo js-openEnlarge"
-			src="img/tnt-2019/IMG-2.jpeg"
-			alt="Remise des récompenses"
-			loading="lazy"
-		/>
-		<img
-			class="photo js-openEnlarge"
-			src="img/tnt-2019/IMG-3.jpeg"
-			alt="Coureurs du TNT"
-			loading="lazy"
-		/>
-		<img
-			class="photo js-openEnlarge"
-			src="img/tnt-2019/IMG-4.jpeg"
-			alt="Lieu d'arrivée des coureurs"
-			loading="lazy"
-		/>
-		<img
-			class="photo js-openEnlarge"
-			src="img/tnt-2019/IMG-5.jpeg"
-			alt="Coureurs du TNT"
-			loading="lazy"
-		/>
-		<img
-			class="photo js-openEnlarge"
-			src="img/tnt-2019/IMG-6.jpeg"
-			alt="Départ des coureurs"
-			loading="lazy"
-		/>
-		<img
-			class="photo js-openEnlarge"
-			src="img/tnt-2019/IMG-7.jpeg"
-			alt="Podium féminin"
-			loading="lazy"
-		/>
-		<img
-			class="photo js-openEnlarge"
-			src="img/tnt-2019/IMG-8.jpeg"
-			alt="Concert extérieur sur le parcours"
-			loading="lazy"
-		/>
-		<img
-			class="photo js-openEnlarge"
-			src="img/tnt-2019/IMG-9.jpeg"
-			alt="Coureur du TNT"
-			loading="lazy"
-		/>
-		<img
-			class="photo js-openEnlarge"
-			src="img/tnt-2019/IMG-10.jpeg"
-			alt="Coureurs du TNT"
-			loading="lazy"
-		/>
-		<img
-			class="photo js-openEnlarge"
-			src="img/tnt-2019/IMG-11.jpeg"
-			alt="Coureurs du TNT"
-			loading="lazy"
-		/>
-		<img
-			class="photo js-openEnlarge"
-			src="img/tnt-2019/IMG-12.jpeg"
-			alt="Coureurs du TNT"
-			loading="lazy"
-		/>
+		{
+			galleryPublicPath.map((path) => (
+				<div class="photo">
+					<Picture
+						class="js-openEnlarge"
+						src={path}
+						alt="Photo du TNT"
+						loading="lazy"
+						widths={[300, 800, 1200, 1800]}
+						sizes="(max-width: 816px) 100vw, (max-width: 62em) 50vw, 25vw"
+						aspectRatio="3:2"
+					/>
+				</div>
+			))
+		}
 	</div>
 	<div class="see-more">
 		<Anchor href="https://photos.app.goo.gl/ENwVo4tP2VPxFw1BA" black>
