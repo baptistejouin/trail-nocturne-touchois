@@ -1,0 +1,76 @@
+---
+export interface Props {
+	icon: string;
+	black?: boolean;
+	round?: boolean;
+	href: string;
+	download?: string;
+}
+
+const { href, icon, black, download } = Astro.props;
+---
+
+<a
+	class={`btn btn--round ${black ? "btn--black" : "btn--white"}`}
+	href={href}
+	target="_blank"
+	download={download}
+>
+	<div class={`icon-${icon}`}></div>
+</a>
+
+<style>
+	.btn {
+		width: max-content;
+		text-transform: uppercase;
+		border: 2px solid var(--white);
+		height: max-content;
+		font-weight: 600;
+		padding: 0.75em 3em;
+	}
+	.btn:hover [class*="icon-"] {
+		background-color: var(--white);
+	}
+	.btn [class*="icon-"] {
+		width: 1.75em;
+		height: 1.75em;
+	}
+	.btn--white [class*="icon-"] {
+		background-color: var(--white);
+	}
+	.btn--white:hover {
+		background-color: var(--white);
+	}
+	.btn--white:hover [class*="icon-"] {
+		background-color: var(--black);
+	}
+	.btn--black {
+		border-color: var(--black);
+	}
+	.btn--small {
+		padding: 0.5em 1.4em;
+		border-width: 1px;
+	}
+	.btn--round {
+		padding: 0.75em;
+		border-radius: 50%;
+	}
+	@media (max-width: 43em) {
+		.btn:not(:first-child) {
+			margin-left: 0.5em;
+		}
+		.btn {
+			padding: 0.5em 2em;
+		}
+		.btn--round {
+			padding: 0.5em;
+		}
+		.btn--small {
+			padding: 0.5em 1em;
+		}
+		.btn [class*="icon-"] {
+			width: 1.5em;
+			height: 1.5em;
+		}
+	}
+</style>

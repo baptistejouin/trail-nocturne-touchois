@@ -1,0 +1,76 @@
+---
+import RoundAnchor from "../RoundAnchor.astro";
+---
+
+<section class="follow">
+	<div class="follow__container container">
+		<h2 class="follow__title">Suivez l’évènement avec #tntlestouches</h2>
+		<div class="follow__btns">
+			<RoundAnchor
+				href="https://www.facebook.com/lestouchesrunning/"
+				icon="facebook"
+				round
+				black
+			/>
+			<RoundAnchor
+				href="https://www.instagram.com/tntlestouches/"
+				icon="instagram"
+				round
+				black
+			/>
+			<RoundAnchor
+				href="https://www.strava.com/clubs/les-touches-running-232451"
+				icon="strava"
+				round
+				black
+			/>
+		</div>
+	</div>
+</section>
+
+<style>
+	.follow {
+		margin: 0 !important;
+		background-color: rgb(244, 244, 244);
+	}
+	.follow__container {
+		padding-block: 1.5em;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.follow__title {
+		font-size: 1.25rem;
+		font-weight: 500;
+		color: var(--black);
+		text-transform: uppercase;
+	}
+	.follow__title::after {
+		display: none;
+	}
+	.follow__btns {
+		display: flex;
+		gap: 1em;
+	}
+	.follow__btn:not(:first-child) {
+		margin-left: 1em;
+	}
+	.follow__btns .btn:hover {
+		background-color: var(--black);
+	}
+	.follow__btns .btn:hover [class*="icon-"] {
+		background-color: var(--white);
+	}
+	@media (max-width: 43em) {
+		.follow__btn:not(:first-child) {
+			margin-left: 0.5em;
+		}
+		.follow__container {
+			text-align: center;
+			flex-direction: column;
+		}
+		.follow__container > *:not(:first-child) {
+			margin-top: 0.5em;
+		}
+	}
+</style>

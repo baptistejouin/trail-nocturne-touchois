@@ -1,0 +1,288 @@
+---
+---
+
+<header>
+	<nav id="navbar" class="nav container">
+		<ul class="nav__links" id="js-nav">
+			<a class="nav__close js-close_nav">&times;</a>
+			<li class="nav__link">
+				<a href="#about" class="js-close_nav">Le TNT</a>
+			</li>
+			<li class="nav__link dropdown">
+				<a class="js-close_nav">
+					<span>Participer</span>
+					<div class="icon-dropdown icon--white"></div>
+				</a>
+				<ul class="dropdown__list js-close_nav">
+					<li class="dropdown__item"><a href="#12km">12 KM</a></li>
+					<li class="dropdown__item"><a href="#24km">24 KM</a></li>
+				</ul>
+			</li>
+			<li class="nav__link">
+				<a href="#gallery" class="js-close_nav">Galerie</a>
+			</li>
+			<li class="nav__link">
+				<a href="mailto:contact@tnt-lestouches.fr" class="js-close_nav"
+					>Contact</a
+				>
+			</li>
+			<li class="nav__link">
+				<a
+					class="btn btn--small js-close_nav"
+					href="https://www.timepulse.run/evenements/voir/1892/trail-nocturne-touchois-les-touches#epreuve"
+					>Inscription</a
+				>
+			</li>
+		</ul>
+		<button class="nav__icon js-open_nav">&#9776;</button>
+	</nav>
+	<section class="head container">
+		<h1 class="head__title">Trail<br />Nocturne<br />Touchois</h1>
+		<p class="head__subtitle">8ème édition</p>
+	</section>
+	<div class="header-skew"></div>
+</header>
+
+<style lang="scss">
+	.header-skew {
+		background: linear-gradient(
+			to left bottom,
+			rgba(255, 255, 255, 0) 49.5%,
+			#fff 50%
+		);
+		width: 100%;
+		height: 70px;
+		position: absolute;
+		bottom: 0;
+	}
+	header {
+		position: relative;
+		height: calc(90% + 70px);
+		background: center / cover no-repeat var(--black)
+			url("../img/banner-header.jpeg");
+		color: var(--white);
+	}
+	.nav {
+		padding-block: 2em;
+		display: flex;
+		justify-content: flex-end;
+
+		@media (max-width: 62em) {
+			padding-block: 0em;
+			padding-top: 1em;
+		}
+	}
+	.nav__links {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		text-transform: uppercase;
+		gap: 2em;
+	}
+	.nav__icon {
+		display: none;
+		font-size: 3em;
+	}
+	.dropdown {
+		padding: 1em 0;
+		position: relative;
+	}
+	.dropdown > a {
+		display: flex;
+		align-items: center;
+	}
+	.dropdown > a > *:not(:first-child) {
+		margin-left: 0.5em;
+	}
+	.dropdown__list {
+		opacity: 0;
+		width: 0;
+		height: 0;
+		position: absolute;
+	}
+	.dropdown:hover .dropdown__list {
+		height: auto;
+		width: 100%;
+		opacity: 1;
+		display: block;
+		margin-top: 1em;
+		position: absolute;
+		left: 0;
+		background-color: var(--white);
+	}
+	.dropdown:hover .dropdown__item {
+		padding: 1em 2em;
+	}
+	.dropdown__item {
+		width: 100%;
+		color: var(--black);
+		text-align: center;
+		cursor: pointer;
+	}
+	.dropdown__item:hover {
+		background-color: rgb(220, 220, 220);
+	}
+	.head {
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+		display: flex;
+		flex-direction: column;
+	}
+	.head__title {
+		text-transform: uppercase;
+		font-size: min(5.5rem, 8vw);
+		font-weight: 600;
+		color: var(--white);
+	}
+	.head__subtitle {
+		width: max-content;
+		font-weight: 500;
+		font-size: 1.3em;
+		padding: 0.25em 1.5em;
+		background-color: var(--primary-color);
+	}
+	.high-sponsors {
+		display: flex;
+		align-items: center;
+	}
+	.sponsor {
+		height: 4em;
+		filter: saturate(0);
+	}
+	.sponsor:hover {
+		filter: saturate(1);
+		transition: filter 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+	.sponsor img,
+	.sponsor img {
+		height: 100%;
+		width: auto;
+	}
+	.sponsor:not(:last-child) {
+		margin-right: 2em;
+	}
+	.header__text {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+	}
+	.header__btn {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.2rem;
+		margin-top: 2em;
+	}
+	.nav__close {
+		display: none;
+	}
+	@media (max-width: 62em) {
+		header {
+			height: 80%;
+			min-height: 500px;
+		}
+		.nav__icon {
+			display: block;
+		}
+		.nav__close {
+			display: block;
+			font-size: 4em;
+			position: absolute;
+			top: 10px;
+			right: 20px;
+		}
+		.nav__links {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			height: 100%;
+			width: 100%;
+			transform: translateX(-100%);
+			position: fixed;
+			top: 0;
+			z-index: 2;
+			left: 0;
+			background-color: var(--black);
+			overflow-x: hidden;
+		}
+		.nav__link:not(:first-child) {
+			margin-left: 0;
+			margin-top: 0.5em;
+		}
+		.nav__link {
+			display: flex;
+			justify-content: center;
+			max-width: 300px;
+			/* width: 75%; */
+			font-size: 2em;
+		}
+		.dropdown {
+			transition: padding-bottom 0.8s;
+			padding: 0;
+		}
+		.dropdown__list {
+			top: 0;
+		}
+		.dropdown:hover .dropdown__list {
+			bottom: 0;
+			background: none;
+			transition: opacity 1s;
+			transition-delay: 0.3s;
+			margin-top: 1.5em;
+		}
+		.dropdown:hover {
+			padding-bottom: 4.5em;
+		}
+		.dropdown__item {
+			font-size: 1.3rem;
+			color: var(--white);
+		}
+		.dropdown__item:hover {
+			background: none;
+		}
+		.head {
+			padding-top: 2em;
+		}
+		.header__text {
+			align-items: center;
+		}
+		.high-sponsors {
+			justify-content: flex-end;
+		}
+	}
+	@media (max-width: 43em) {
+		.head__subtitle {
+			font-size: 1.2em;
+			margin-top: 0.5em;
+		}
+	}
+</style>
+
+<script>
+	const nav = document.getElementById("js-nav");
+	const openNavBtn = document.querySelectorAll(".js-open_nav");
+	const closeNavBtn = document.querySelectorAll(".js-close_nav");
+
+	const openNav = () => {
+		if (nav) {
+			nav.style.transition = ".5s";
+			nav.style.transform = "translateX(0)";
+		}
+	};
+
+	const closeNav = () => {
+		if (nav) {
+			nav.style.transform = "";
+			setTimeout(function () {
+				nav.removeAttribute("style");
+			}, 500);
+		}
+	};
+
+	openNavBtn.forEach((btn) => {
+		btn.addEventListener("click", openNav);
+	});
+	closeNavBtn.forEach((btn) => {
+		btn.addEventListener("click", closeNav);
+	});
+	window.addEventListener("resize", closeNav);
+</script>

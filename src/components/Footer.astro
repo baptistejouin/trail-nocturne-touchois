@@ -1,0 +1,101 @@
+---
+---
+
+<footer>
+	<div class="container footer">
+		<h2 class="visuallyhidden">
+			Retrouvez les liens utiles et informations pratique relative au TNT
+		</h2>
+		<div class="footer__title">
+			<p>Trail<br />Nocturne<br />Touchois</p>
+		</div>
+		<div class="footer__links">
+			<h3 class="footer__h3">Liens utiles</h3>
+			<ul class="footer__list">
+				<li>
+					<a href="mailto:contact@tnt-lestouches.fr">Contactez-nous</a
+					>
+				</li>
+				<li>
+					<a href="file/Reglement-TNT2021.pdf" target="_blank"
+						>Réglement de la course</a
+					>
+				</li>
+				<li>
+					<a href="/legals">Mentions légales</a>
+				</li>
+			</ul>
+		</div>
+		<div class="footer__infos">
+			<h3 class="footer__h3">Infos pratiques</h3>
+			<ul class="footer__list">
+				<li>
+					<a
+						href="https://goo.gl/maps/6yrbQn3syNmPXA227"
+						target="_blank">44390 Les Touches France</a
+					>
+				</li>
+				<li>
+					<a href="mailto:contact@tnt-lestouches.fr"
+						>contact@tnt-lestouches.fr</a
+					>
+				</li>
+				<li>
+					<a href="tel:+33640131802">+33 6 40 13 18 02</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<p class="copyright">
+		&copy; 2022 - TNT Les Touches - Tous droits réservés.
+		<a href="/legals">Mentions légales</a>
+	</p>
+</footer>
+
+<style>
+	footer {
+		background-color: var(--black);
+		color: var(--white);
+	}
+	.footer {
+		padding-block: 2.5em;
+		display: flex;
+		line-height: 2em;
+		justify-content: space-between;
+	}
+	.footer__title {
+		font-size: 2.5em;
+		line-height: 1em;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	.footer__h3 {
+		text-transform: uppercase;
+	}
+	.footer__h3::after {
+		content: "";
+		display: block;
+		margin-bottom: 0.5em;
+		width: 120%;
+		height: 2px;
+		background-color: var(--primary-color);
+	}
+	.copyright {
+		font-size: 0.8em;
+		color: gray;
+		padding-bottom: 1.5em;
+		text-align: center;
+	}
+	@media (max-width: 816px) {
+		.footer {
+			flex-wrap: wrap;
+		}
+		.footer__title {
+			flex-basis: 100%;
+			margin-bottom: 1em;
+		}
+		.footer__h3::after {
+			width: 30%;
+		}
+	}
+</style>

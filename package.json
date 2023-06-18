@@ -10,6 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.6.4"
+    "@amplitude/analytics-browser": "^2.0.0",
+    "astro": "^2.6.4",
+    "sass": "^1.63.4",
+    "tiny-slider": "^2.9.4"
   }
 }

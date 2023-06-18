@@ -1,0 +1,210 @@
+---
+import Anchor from "../Anchor.astro";
+---
+
+<section id="gallery" class="container">
+	<h2><strong>Photos</strong> de 2022</h2>
+	<div class="photos">
+		<img
+			class="photo js-openEnlarge"
+			src="img/tnt-2019/IMG-1.jpeg"
+			alt="Ravitaillement à mi parcours"
+			loading="lazy"
+		/>
+		<img
+			class="photo js-openEnlarge"
+			src="img/tnt-2019/IMG-2.jpeg"
+			alt="Remise des récompenses"
+			loading="lazy"
+		/>
+		<img
+			class="photo js-openEnlarge"
+			src="img/tnt-2019/IMG-3.jpeg"
+			alt="Coureurs du TNT"
+			loading="lazy"
+		/>
+		<img
+			class="photo js-openEnlarge"
+			src="img/tnt-2019/IMG-4.jpeg"
+			alt="Lieu d'arrivée des coureurs"
+			loading="lazy"
+		/>
+		<img
+			class="photo js-openEnlarge"
+			src="img/tnt-2019/IMG-5.jpeg"
+			alt="Coureurs du TNT"
+			loading="lazy"
+		/>
+		<img
+			class="photo js-openEnlarge"
+			src="img/tnt-2019/IMG-6.jpeg"
+			alt="Départ des coureurs"
+			loading="lazy"
+		/>
+		<img
+			class="photo js-openEnlarge"
+			src="img/tnt-2019/IMG-7.jpeg"
+			alt="Podium féminin"
+			loading="lazy"
+		/>
+		<img
+			class="photo js-openEnlarge"
+			src="img/tnt-2019/IMG-8.jpeg"
+			alt="Concert extérieur sur le parcours"
+			loading="lazy"
+		/>
+		<img
+			class="photo js-openEnlarge"
+			src="img/tnt-2019/IMG-9.jpeg"
+			alt="Coureur du TNT"
+			loading="lazy"
+		/>
+		<img
+			class="photo js-openEnlarge"
+			src="img/tnt-2019/IMG-10.jpeg"
+			alt="Coureurs du TNT"
+			loading="lazy"
+		/>
+		<img
+			class="photo js-openEnlarge"
+			src="img/tnt-2019/IMG-11.jpeg"
+			alt="Coureurs du TNT"
+			loading="lazy"
+		/>
+		<img
+			class="photo js-openEnlarge"
+			src="img/tnt-2019/IMG-12.jpeg"
+			alt="Coureurs du TNT"
+			loading="lazy"
+		/>
+	</div>
+	<div class="see-more">
+		<Anchor href="https://photos.app.goo.gl/ENwVo4tP2VPxFw1BA" black>
+			Voir toutes les photos
+		</Anchor>
+	</div>
+</section>
+
+<style>
+	.photos {
+		margin-top: 2em;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.photo {
+		width: calc((100% / 4) - 3 * 0.25em);
+		max-height: 400px;
+		object-fit: cover;
+		overflow: hidden;
+		margin: 0.5em 0;
+		aspect-ratio: 3 / 2;
+		cursor: zoom-in;
+	}
+	.see-more {
+		display: flex;
+		justify-content: center;
+		margin-top: 2em;
+	}
+	@media (min-width: 816px) and (max-width: 62em) {
+		.photo {
+			width: calc((100% / 2) - 3 * 0.25em);
+			display: none;
+		}
+		.photo:nth-child(-n + 6) {
+			display: block;
+		}
+	}
+	@media (max-width: 816px) {
+		.photo {
+			width: 100%;
+			display: none;
+		}
+		.photo:nth-child(-n + 4) {
+			display: block;
+		}
+	}
+</style>
+
+<style is:global>
+	.enlarge__viewer {
+		z-index: 999;
+		cursor: zoom-out;
+		position: fixed;
+		background-color: rgba(24, 24, 24, 0.824);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		bottom: 0;
+		right: 0;
+	}
+	.enlarge__container {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		padding: 4em;
+		height: 100%;
+		width: 100%;
+	}
+	.enlarge__container img {
+		width: 100%;
+		object-fit: contain;
+		max-height: none;
+	}
+	.enlarge__close {
+		position: absolute;
+		top: 0.5em;
+		right: 0.5em;
+		line-height: 0.5em;
+		font-size: 3em;
+		text-decoration: none;
+		color: var(--white);
+	}
+</style>
+
+<script>
+	const openEnlarge = (source: string, alt: string) => {
+		if (screen.width < 550) {
+			return;
+		}
+		const div = document.createElement("div");
+		div.classList.add("enlarge__viewer");
+		div.setAttribute("title", "Fermer l'aperçu");
+
+		const container = document.createElement("div");
+		container.classList.add("enlarge__container");
+
+		const close = document.createElement("button");
+		close.classList.add("enlarge__close");
+		close.innerText = "×";
+
+		const img = document.createElement("img");
+		img.setAttribute("src", source);
+		img.setAttribute("alt", alt);
+		img.setAttribute("title", alt);
+
+		container.appendChild(close);
+		container.appendChild(img);
+		div.appendChild(container);
+
+		div.addEventListener("click", closeEnlarge);
+
+		document.body.appendChild(div);
+	};
+
+	const closeEnlarge = () => {
+		const elem = document.querySelector(".enlarge__viewer");
+		if (elem && elem.parentNode) {
+			elem.parentNode.removeChild(elem);
+		}
+	};
+
+	document.querySelectorAll(".js-openEnlarge").forEach((elem) => {
+		elem.addEventListener("click", (e) => {
+			const target = e.target as HTMLImageElement;
+			openEnlarge(target.src || "", target.alt);
+		});
+	});
+</script>

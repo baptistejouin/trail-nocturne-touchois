@@ -1,0 +1,106 @@
+---
+---
+
+<section class="container">
+	<h2><strong>Les partenaires</strong> de cette 8ème édition</h2>
+	<div class="partenaires__container">
+		<div>
+			<a
+				class="partenaire"
+				href="https://magasin.darty.com/390-darty-nort-sur-erdre"
+				target="_blank"
+				><img
+					class="lazyload"
+					src="img/sponsors/low/darty.png"
+					data-src="img/sponsors/high/darty.png"
+					alt="Darty"
+				/></a
+			>
+		</div>
+		<div>
+			<a
+				class="partenaire"
+				href="https://www.newloc.fr/agences/nort-sur-erdre"
+				target="_blank"
+				><img
+					class="lazyload"
+					src="img/sponsors/low/newloc_applatjaune.png"
+					data-src="img/sponsors/high/newloc_applatjaune.png"
+					alt="New Loc"
+				/></a
+			>
+		</div>
+		<div>
+			<a
+				class="partenaire"
+				href="https://www.guerin-fils.fr/"
+				target="_blank"
+				><img
+					class="lazyload"
+					src="img/sponsors/low/guerin-logopng.png"
+					data-src="img/sponsors/high/guerin-logopng.png"
+					alt="Guerin & Fils"
+				/></a
+			>
+		</div>
+		<div>
+			<a
+				class="partenaire"
+				href="https://vandb.fr/v-and-b-nort-sur-erdre.html"
+				target="_blank"
+				><img
+					class="lazyload"
+					src="img/sponsors/low/vnb.png"
+					data-src="img/sponsors/high/vnb.png"
+					alt="V&B"
+				/></a
+			>
+		</div>
+	</div>
+</section>
+
+<style>
+	.partenaires {
+		margin: 3em 1em;
+	}
+	.partenaires__container {
+		margin-top: 2em;
+	}
+	.partenaire {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.partenaire img {
+		filter: saturate(0);
+		height: 6em;
+		width: auto;
+	}
+	.partenaire img:hover {
+		filter: saturate(1);
+		transition: filter 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+</style>
+
+<script>
+	import { tns } from "tiny-slider";
+
+	var slider = tns({
+		container: ".partenaires__container",
+		items: 1,
+		lazyload: true,
+		controls: false,
+		autoplay: true,
+		autoplayButtonOutput: false,
+		nav: false,
+		mouseDrag: true,
+		responsive: {
+			640: {
+				items: 2,
+			},
+			1024: {
+				items: 4,
+			},
+		},
+	});
+</script>
