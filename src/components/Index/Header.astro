@@ -37,8 +37,14 @@
 		<button class="nav__icon js-open_nav">&#9776;</button>
 	</nav>
 	<section class="head container">
-		<h1 class="head__title">Trail<br />Nocturne<br />Touchois</h1>
-		<p class="head__subtitle">8ème édition</p>
+		<div>
+			<h1 class="head__title">
+				Trail<br />Nocturne<br />Touchois <span class="head__subtitle"
+					>9ème édition</span
+				>
+			</h1>
+		</div>
+		<h2 class="head__date">25 novembre 2023</h2>
 	</section>
 	<div class="header-skew"></div>
 </header>
@@ -129,17 +135,31 @@
 		flex-direction: column;
 	}
 	.head__title {
+		position: relative;
 		text-transform: uppercase;
-		font-size: min(5.5rem, 8vw);
+		font-size: clamp(4rem, 8vw, 5.5rem);
 		font-weight: 600;
 		color: var(--white);
+		display: inline;
 	}
 	.head__subtitle {
+		position: absolute;
+		bottom: -196%;
+		right: -105%;
+		transform: rotate(-10deg);
 		width: max-content;
 		font-weight: 500;
-		font-size: 1.3em;
+		font-size: clamp(0.8rem, 1.4vw, 1rem);
 		padding: 0.25em 1.5em;
 		background-color: var(--primary-color);
+	}
+	.head__date {
+		color: var(--white);
+		margin-top: 1.5rem;
+		text-transform: uppercase;
+	}
+	.head__date::after {
+		content: none;
 	}
 	.high-sponsors {
 		display: flex;
@@ -247,12 +267,6 @@
 		}
 		.high-sponsors {
 			justify-content: flex-end;
-		}
-	}
-	@media (max-width: 43em) {
-		.head__subtitle {
-			font-size: 1.2em;
-			margin-top: 0.5em;
 		}
 	}
 </style>
