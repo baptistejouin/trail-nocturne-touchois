@@ -1,0 +1,37 @@
+---
+import Anchor from "../components/Anchor.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="404 - Trail Nocturne Touchois">
+	<main>
+		<div>
+			<h1>404</h1>
+			<p>La page que vous cherchez n'existe pas.</p>
+			<Anchor href="/">Accueil</Anchor>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		background: center / cover no-repeat var(--black)
+			url("../img/banner-header.jpeg");
+		text-align: center;
+		background-color: black;
+		color: white;
+		min-height: max(800px, 100vh);
+		display: grid;
+		place-items: center;
+	}
+	h1 {
+		color: white;
+
+		font-size: 8rem;
+		margin: 0;
+	}
+	p {
+		font-size: 2rem;
+		margin-bottom: 4rem;
+	}
+</style>

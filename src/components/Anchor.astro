@@ -2,13 +2,16 @@
 export interface Props {
 	href: string;
 	black?: boolean;
+	targetBlank?: boolean;
 }
 
-const { href, black } = Astro.props;
+const { href, black, targetBlank } = Astro.props;
 ---
 
-<a class={`btn ${black ? "btn--black" : ""}`} href={href} target="_blank"
-	><slot /></a
+<a
+	class={`btn ${black ? "btn--black" : ""}`}
+	href={href}
+	target={targetBlank ? "_blank" : ""}><slot /></a
 >
 
 <style>
