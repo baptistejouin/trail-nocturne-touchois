@@ -4,19 +4,11 @@
 <header>
 	<nav id="navbar" class="nav container">
 		<ul class="nav__links" id="js-nav">
-			<a class="nav__close js-close_nav">&times;</a>
+			<a class="nav__close js-close_nav"
+				><div class="icon icon-close icon--white"></div></a
+			>
 			<li class="nav__link">
 				<a href="#info" class="js-close_nav">Info</a>
-			</li>
-			<li class="nav__link dropdown">
-				<a class="js-close_nav">
-					<span>Participer</span>
-					<div class="icon-dropdown icon--white"></div>
-				</a>
-				<ul class="dropdown__list js-close_nav">
-					<li class="dropdown__item"><a href="#12km">12 KM</a></li>
-					<li class="dropdown__item"><a href="#24km">24 KM</a></li>
-				</ul>
 			</li>
 			<li class="nav__link">
 				<a href="#gallery" class="js-close_nav">Galerie</a>
@@ -34,16 +26,15 @@
 				>
 			</li>
 		</ul>
-		<button class="nav__icon js-open_nav">&#9776;</button>
+		<button class="nav__icon js-open_nav"
+			><div class="icon icon-menu icon--white"></div></button
+		>
 	</nav>
 	<section class="head container">
-		<div>
-			<h1 class="head__title">
-				Trail<br />Nocturne<br />Touchois <span class="head__subtitle"
-					>9ème édition</span
-				>
-			</h1>
-		</div>
+		<h1 class="head__title">
+			Trail<br />Nocturne<br />Touchois
+		</h1>
+		<span class="head__subtitle">9ème édition</span>
 		<h2 class="head__date">25 novembre 2023</h2>
 	</section>
 	<div class="header-skew"></div>
@@ -64,6 +55,7 @@
 	header {
 		position: relative;
 		height: calc(80% + 70px);
+		min-height: 500px;
 		background: center / cover no-repeat var(--black)
 			url("../img/banner-header.jpeg");
 		color: var(--white);
@@ -75,8 +67,12 @@
 
 		@media (max-width: 62em) {
 			padding-block: 0em;
-			padding-top: 1em;
+			padding-top: 2em;
 		}
+	}
+	.icon {
+		width: 3rem;
+		height: 3rem;
 	}
 	.nav__links {
 		display: flex;
@@ -85,48 +81,12 @@
 		text-transform: uppercase;
 		gap: 2em;
 	}
+	.nav__link {
+		font-size: 1.2rem;
+	}
 	.nav__icon {
 		display: none;
 		font-size: 3em;
-	}
-	.dropdown {
-		padding: 1em 0;
-		position: relative;
-	}
-	.dropdown > a {
-		display: flex;
-		align-items: center;
-	}
-	.dropdown > a > *:not(:first-child) {
-		margin-left: 0.5em;
-	}
-	.dropdown__list {
-		opacity: 0;
-		width: 0;
-		height: 0;
-		position: absolute;
-	}
-	.dropdown:hover .dropdown__list {
-		height: auto;
-		width: 100%;
-		opacity: 1;
-		display: block;
-		margin-top: 1em;
-		position: absolute;
-		left: 0;
-		background-color: var(--white);
-	}
-	.dropdown:hover .dropdown__item {
-		padding: 1em 2em;
-	}
-	.dropdown__item {
-		width: 100%;
-		color: var(--black);
-		text-align: center;
-		cursor: pointer;
-	}
-	.dropdown__item:hover {
-		background-color: rgb(220, 220, 220);
 	}
 	.head {
 		margin-top: 0 !important;
@@ -143,10 +103,6 @@
 		display: inline;
 	}
 	.head__subtitle {
-		position: absolute;
-		bottom: -196%;
-		right: -105%;
-		transform: rotate(-10deg);
 		width: max-content;
 		font-weight: 500;
 		font-size: clamp(0.8rem, 1.4vw, 1rem);
@@ -191,19 +147,14 @@
 		display: none;
 	}
 	@media (max-width: 62em) {
-		header {
-			height: 80%;
-			min-height: 500px;
-		}
 		.nav__icon {
 			display: block;
 		}
 		.nav__close {
 			display: block;
-			font-size: 4em;
 			position: absolute;
-			top: 10px;
-			right: 20px;
+			top: 2rem;
+			right: 2rem;
 		}
 		.nav__links {
 			display: flex;
