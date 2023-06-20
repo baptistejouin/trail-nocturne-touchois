@@ -8,9 +8,13 @@ import Gallery from "../components/Index/Gallery.astro";
 import Social from "../components/Index/Social.astro";
 import Registration from "../components/Index/Registration.astro";
 import Footer from "../components/Footer.astro";
+import data from "../content/data.json";
 ---
 
-<Layout title="Trail Nocturne Touchois">
+<Layout
+	title={data.pages.index.head.title}
+	description={data.pages.index.head.description}
+>
 	<Header />
 	<main>
 		<Info />

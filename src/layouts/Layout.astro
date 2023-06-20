@@ -3,19 +3,17 @@ import "../css/icon.css";
 
 export interface Props {
 	title: string;
+	description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8" />
-		<meta
-			name="description"
-			content="Le Trail Nocturne Touchois ou TNT se déroulera le 25 novembre 2023. Départ à 19h30 pour le 12km et 19h00 pour le 24km. Ouverture des inscriptions le 24 juin 2023 et clôture des inscriptions le 22 novembre 2023"
-		/>
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link
 			rel="shortcut icon"

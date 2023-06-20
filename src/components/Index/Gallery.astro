@@ -1,28 +1,14 @@
 ---
 import Anchor from "../Anchor.astro";
 import { Picture } from "@astrojs/image/components";
-
-const galleryPublicPath = [
-	"/img/gallery/IMG-1.jpeg",
-	"/img/gallery/IMG-2.jpg",
-	"/img/gallery/IMG-3.jpg",
-	"/img/gallery/IMG-4.jpg",
-	"/img/gallery/IMG-5.jpg",
-	"/img/gallery/IMG-6.jpeg",
-	"/img/gallery/IMG-7.jpg",
-	"/img/gallery/IMG-8.jpeg",
-	"/img/gallery/IMG-9.jpeg",
-	"/img/gallery/IMG-10.jpg",
-	"/img/gallery/IMG-11.jpeg",
-	"/img/gallery/IMG-12.jpeg",
-];
+import data from "../../content/data.json";
 ---
 
 <section id="gallery" class="container">
 	<h2>Le TNT en <strong>images</strong></h2>
 	<div class="photos">
 		{
-			galleryPublicPath.map((path) => (
+			data.pages.index.content.gallery.urls.map((path) => (
 				<div class="photo">
 					<Picture
 						class="js-openEnlarge"
@@ -39,11 +25,11 @@ const galleryPublicPath = [
 	</div>
 	<div class="see-more">
 		<Anchor
-			href="https://photos.app.goo.gl/ENwVo4tP2VPxFw1BA"
+			href={data.pages.index.content.gallery.button.href}
 			black
 			targetBlank
 		>
-			Voir toutes les photos
+			{data.pages.index.content.gallery.button.label}
 		</Anchor>
 	</div>
 </section>

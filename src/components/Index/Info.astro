@@ -1,9 +1,14 @@
 ---
 import Anchor from "../Anchor.astro";
+import data from "../../content/data.json";
 ---
 
 <section class="container" id="info">
-	<h2>Rendez-vous en <strong>2023</strong>&nbsp;!</h2>
+	<h2>
+		Rendez-vous en <strong
+			>{data.pages.index.content.info.edition_year}</strong
+		>&nbsp;!
+	</h2>
 	<div class="header__text">
 		<div>
 			<h3>Le TNT, c'est quoi&nbsp;?</h3>
@@ -31,35 +36,33 @@ import Anchor from "../Anchor.astro";
 			</ul>
 			<h3>Quand s'inscrire&nbsp;?</h3>
 			<p>
-				Ouverture des inscriptions le <strong>24 juin 2023</strong> et clôture
-				des inscriptions le <strong>22 novembre 2023</strong>
+				Ouverture des inscriptions le <strong
+					>{
+						data.pages.index.content.info.registration_opening_date
+					}</strong
+				> et clôture des inscriptions le <strong
+					>{
+						data.pages.index.content.info.registration_closing_date
+					}</strong
+				>
 				ou lorsque les 800 premiers dossiers complets seront atteints. Majoration
-				+2€ pour le 12km et +1€ pour le 24km à partir du 01 Novembre 2023.
+				+2€ pour le 12km et +1€ pour le 24km à partir du {
+					data.pages.index.content.info.increase_date
+				}.
 			</p>
 			<h3>Remise des dossards</h3>
 			<p>
-				Les dossards seront remis aux coureurs le mercredi 22 novembre
-				2023 de 16h à 19h chez notre partenaire V&B les Touches et le
-				vendredi 24 novembre 2023 à partir de 17h chez SPORT 2000. Ou
-				bien, le samedi 25 novembre 2023 à partir de 17h00. Au moment du
-				retrait, le concurrent devra montrer une pièce d’identité pour
-				rentrer dans le complexe.<br />
+				{data.pages.index.content.info.race_numbers_paragraph}<br />
 			</p>
 
 			<div class="header__btn">
-				<Anchor black href="/file/Reglement_TNT2023.pdf" targetBlank>
-					Voir le réglement 2023
-				</Anchor>
-				<Anchor black href="/file/classement_TNT_2021.pdf" targetBlank>
-					Classement général 2021
-				</Anchor>
-				<Anchor
-					black
-					href="file/classement_TNT_2021__PAR CATEGORIES__.pdf"
-					targetBlank
-				>
-					Classement par catégories 2021
-				</Anchor>
+				{
+					data.pages.index.content.info.buttons.map((button) => (
+						<Anchor href={button.href} black>
+							{button.label}
+						</Anchor>
+					))
+				}
 			</div>
 		</div>
 	</div>

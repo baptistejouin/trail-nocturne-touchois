@@ -1,11 +1,15 @@
 ---
 import RoundAnchor from "../RoundAnchor.astro";
 import Anchor from "../Anchor.astro";
+import data from "../../content/data.json";
 ---
 
 <section class="participate">
 	<div class="skew-open"></div>
-	<h2 class="visuallyhidden">Participer à la 9ème édition du TNT</h2>
+	<h2 class="visuallyhidden">
+		Participer à la {data.pages.index.content.header.edition_number}ème
+		édition du TNT
+	</h2>
 	<div class="courses container">
 		<div class="course">
 			<div class="course__map">
@@ -17,7 +21,10 @@ import Anchor from "../Anchor.astro";
 				<div id="12km">
 					<h3 class="course__title">12 KM</h3>
 					<p class="course__text">
-						Tarif : 10€ + frais d’inscription<br />
+						Tarif : {
+							data.pages.index.content.registration
+								.twelve_km_price
+						} + frais d’inscription<br />
 						Départ prévu à 19h30<br />
 						Ravitaillement à l'arrivée
 					</p>
@@ -48,13 +55,16 @@ import Anchor from "../Anchor.astro";
 				<div id="24km">
 					<h3 class="course__title">24 KM</h3>
 					<p class="course__text">
-						Tarif : 13€ + frais d’inscription<br />
+						Tarif : {
+							data.pages.index.content.registration
+								.twenty_four_km_price
+						} + frais d’inscription<br />
 						Départ prévu à 19h00<br />
 						Un ravitaillements au 12km et à l’arrivée
 					</p>
 					<div class="course__btns">
 						<Anchor
-							href="https://www.timepulse.run/evenements/voir/1892/trail-nocturne-touchois-les-touches#epreuve"
+							href={data.pages.index.global.registration_link}
 						>
 							M'inscrire
 						</Anchor>

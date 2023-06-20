@@ -1,0 +1,81 @@
+{
+  "pages": {
+    "index": {
+      "global": {
+        "registration_link": "https://www.timepulse.fr/evenements/voir/2196/trail-nocturne-touchois-les-touches"
+      },
+      "head": {
+        "title": "Trail Nocturne Touchois",
+        "description": "Le Trail Nocturne Touchois ou TNT se déroulera le 25 novembre 2023. Départ à 19h30 pour le 12km et 19h00 pour le 24km. Ouverture des inscriptions le 24 juin 2023 et clôture des inscriptions le 22 novembre 2023"
+      },
+      "content": {
+        "header": {
+          "edition_date": "25 novembre 2023",
+          "edition_number": 9
+        },
+        "info": {
+          "edition_year": 2023,
+          "registration_opening_date": "24 juin 2023",
+          "registration_closing_date": "22 novembre 2023",
+		  "increase_date": "01 Novembre 2023",
+          "race_numbers_paragraph": "Les dossards seront remis aux coureurs le mercredi 22 novembre 2023 de 16h à 19h chez notre partenaire V&B les Touches et le vendredi 24 novembre 2023 à partir de 17h chez SPORT 2000. Ou bien, le samedi 25 novembre 2023 à partir de 17h00. Au moment du retrait, le concurrent devra montrer une pièce d’identité pour rentrer dans le complexe.",
+          "buttons": [
+            {
+              "label": "Voir le réglement 2023",
+              "href": "/file/Reglement_TNT2023.pdf"
+            },
+            {
+              "label": "Classement général 2021",
+              "href": "/file/classement_TNT_2021.pdf"
+            },
+            {
+              "label": "Classement par catégorie 2021",
+              "href": "file/classement_TNT_2021__PAR CATEGORIES__.pdf"
+            }
+          ]
+        },
+        "video": {
+          "title": "Vidéo de la 8ème édition",
+          "src": "https://www.youtube.com/embed/-3kyp5AVwKI"
+        },
+        "registration": {
+          "twelve_km_price": "12€",
+          "twenty_four_km_price": "13€"
+        },
+        "gallery": {
+          "urls": [
+            "/img/gallery/IMG-1.jpeg",
+            "/img/gallery/IMG-2.jpg",
+            "/img/gallery/IMG-3.jpg",
+            "/img/gallery/IMG-4.jpg",
+            "/img/gallery/IMG-5.jpg",
+            "/img/gallery/IMG-6.jpeg",
+            "/img/gallery/IMG-7.jpg",
+            "/img/gallery/IMG-8.jpeg",
+            "/img/gallery/IMG-9.jpeg",
+            "/img/gallery/IMG-10.jpg",
+            "/img/gallery/IMG-11.jpeg",
+            "/img/gallery/IMG-12.jpeg"
+          ],
+          "button": {
+            "label": "Voir toutes les photos",
+            "href": "https://photos.app.goo.gl/ENwVo4tP2VPxFw1BA"
+          }
+        },
+        "footer": {
+          "contact": {
+            "email": {
+              "href": "mailto:contact@tnt-lestouches.fr",
+              "label": "contact@tnt-lestouches.fr"
+            },
+            "tel": {
+              "href": "tel:+33640131802",
+              "label": "+33 6 40 13 18 02"
+            }
+          },
+		  "rules_href": "/file/Reglement_TNT2023.pdf"
+        }
+      }
+    }
+  }
+}

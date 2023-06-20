@@ -1,4 +1,5 @@
 ---
+import data from "../../content/data.json";
 ---
 
 <header>
@@ -24,7 +25,7 @@
 			<li class="nav__link">
 				<a
 					class="btn btn--small js-close_nav"
-					href="https://www.timepulse.run/evenements/voir/1892/trail-nocturne-touchois-les-touches#epreuve"
+					href={data.pages.index.global.registration_link}
 					>Inscription</a
 				>
 			</li>
@@ -37,8 +38,12 @@
 		<h1 class="head__title">
 			Trail<br />Nocturne<br />Touchois
 		</h1>
-		<span class="head__subtitle">9ème édition</span>
-		<h2 class="head__date">25 novembre 2023</h2>
+		<span class="head__subtitle"
+			>{data.pages.index.content.header.edition_number}ème édition</span
+		>
+		<h2 class="head__date">
+			{data.pages.index.content.header.edition_date}
+		</h2>
 	</section>
 	<div class="header-skew"></div>
 </header>

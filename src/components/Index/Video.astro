@@ -1,10 +1,14 @@
+---
+import data from "../../content/data.json";
+---
+
 <section class="container" id="video">
-	<h2>Vidéo de la <strong>8ème édition</strong></h2>
+	<h2>{data.pages.index.content.video.title}</h2>
 	<iframe
 		width="560"
 		height="315"
-		src="https://www.youtube.com/embed/-3kyp5AVwKI"
-		title="YouTube video player"
+		src={data.pages.index.content.video.src}
+		title={data.pages.index.content.video.title}
 		frameborder="0"
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 		allowfullscreen></iframe>
