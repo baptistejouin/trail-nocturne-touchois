@@ -1,180 +1,172 @@
 ---
 import RoundAnchor from "../RoundAnchor.astro";
 import Anchor from "../Anchor.astro";
-import data from "../../content/data.json";
+import data from "../../content/index/data.json";
 ---
 
 <section class="participate">
-	<div class="skew-open"></div>
-	<h2 class="visuallyhidden">
-		Participer à la {data.pages.index.content.header.edition_number}ème
-		édition du TNT
-	</h2>
-	<div class="courses container">
-		<div class="course">
-			<div class="course__map">
-				<iframe
-					src="https://www.google.com/maps/d/u/0/embed?mid=1kSaeBtWEInFBPf152bynI9rpmEBZVJzw"
-				></iframe>
-			</div>
-			<div class="course__desc">
-				<div id="12km">
-					<h3 class="course__title">12 KM</h3>
-					<p class="course__text">
-						Tarif : {
-							data.pages.index.content.registration
-								.twelve_km_price
-						} + frais d’inscription<br />
-						Départ prévu à 19h30<br />
-						Ravitaillement à l'arrivée
-					</p>
-					<div class="course__btns">
-						<Anchor
-							href={data.pages.index.global.registration_link}
-						>
-							M'inscrire
-						</Anchor>
-						<div class="course__sub-buttons">
-							<RoundAnchor
-								href="file/12km/TNT-12km.gpx"
-								download="TNT-12km.gpx"
-								round
-								icon="gpx"
-								!black
-							/>
-							<RoundAnchor
-								href="file/12km/TNT-12km.kmz"
-								download="TNT-12km.kmz"
-								round
-								icon="kmz"
-								!black
-							/>
-						</div>
-					</div>
-				</div>
-				<div id="24km">
-					<h3 class="course__title">24 KM</h3>
-					<p class="course__text">
-						Tarif : {
-							data.pages.index.content.registration
-								.twenty_four_km_price
-						} + frais d’inscription<br />
-						Départ prévu à 19h00<br />
-						Un ravitaillements au 12km et à l’arrivée
-					</p>
-					<div class="course__btns">
-						<Anchor
-							href={data.pages.index.global.registration_link}
-						>
-							M'inscrire
-						</Anchor>
-						<div class="course__sub-buttons">
-							<RoundAnchor
-								href="file/24km/TNT-24km.gpx"
-								download="TNT-24km.gpx"
-								round
-								icon="gpx"
-								!black
-							/>
-							<RoundAnchor
-								href="file/24km/TNT-24km.kmz"
-								download="TNT-24km.kmz"
-								round
-								icon="kmz"
-								!black
-							/>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="skew-close"></div>
+  <div class="skew-open"></div>
+  <h2 class="visuallyhidden">
+    Participer à la {data.pages.index.content.header.edition_number}ème édition
+    du TNT
+  </h2>
+  <div class="courses container">
+    <div class="course">
+      <div class="course__map">
+        <iframe
+          src="https://www.google.com/maps/d/u/0/embed?mid=1kSaeBtWEInFBPf152bynI9rpmEBZVJzw"
+        ></iframe>
+      </div>
+      <div class="course__desc">
+        <div id="12km">
+          <h3 class="course__title">12 KM</h3>
+          <p class="course__text">
+            Tarif : {data.pages.index.content.registration.twelve_km_price} + frais
+            d’inscription<br />
+            Départ prévu à 19h30<br />
+            Ravitaillement à l'arrivée
+          </p>
+          <div class="course__btns">
+            <Anchor href={data.pages.index.global.registration_link}>
+              M'inscrire
+            </Anchor>
+            <div class="course__sub-buttons">
+              <RoundAnchor
+                href="file/12km/TNT-12km.gpx"
+                download="TNT-12km.gpx"
+                round
+                icon="gpx"
+                !black
+              />
+              <RoundAnchor
+                href="file/12km/TNT-12km.kmz"
+                download="TNT-12km.kmz"
+                round
+                icon="kmz"
+                !black
+              />
+            </div>
+          </div>
+        </div>
+        <div id="24km">
+          <h3 class="course__title">24 KM</h3>
+          <p class="course__text">
+            Tarif : {data.pages.index.content.registration.twenty_four_km_price}
+            + frais d’inscription<br />
+            Départ prévu à 19h00<br />
+            Un ravitaillements au 12km et à l’arrivée
+          </p>
+          <div class="course__btns">
+            <Anchor href={data.pages.index.global.registration_link}>
+              M'inscrire
+            </Anchor>
+            <div class="course__sub-buttons">
+              <RoundAnchor
+                href="file/24km/TNT-24km.gpx"
+                download="TNT-24km.gpx"
+                round
+                icon="gpx"
+                !black
+              />
+              <RoundAnchor
+                href="file/24km/TNT-24km.kmz"
+                download="TNT-24km.kmz"
+                round
+                icon="kmz"
+                !black
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="skew-close"></div>
 </section>
 
 <style>
-	.participate {
-		display: flex;
-		flex-direction: column;
-		color: var(--white);
-		background-color: var(--black);
-	}
-	.courses {
-		padding-block: 3em;
-		display: flex;
-		flex-direction: column;
-	}
-	.course:not(:first-child) {
-		margin-top: 3em;
-	}
-	.course {
-		display: flex;
-		justify-content: space-between;
-	}
-	.course__desc,
-	.course__map {
-		width: 48%;
-	}
-	.course__desc {
-		margin: 1em 0;
-	}
-	.course__desc > div:last-child {
-		margin-top: 3em;
-	}
-	.course__desc > div:last-child::before {
-		content: "";
-		display: block;
-		margin-bottom: 3em;
-		height: 1px;
-		width: 100%;
-		background-color: var(--white);
-	}
-	.course__map {
-		overflow: hidden;
-	}
-	.course__title {
-		font-size: 2.3em;
-	}
-	.course__text {
-		margin: 2em 0;
-	}
-	.course__btns {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	.course__sub-buttons {
-		display: flex;
-		gap: 1em;
-	}
-	.course__sub-buttons .btn:not(:first-child) {
-		margin-left: 1em;
-	}
-	@media (max-width: 816px) {
-		.course {
-			flex-direction: column;
-		}
-		.course__desc,
-		.course__map {
-			width: 100%;
-		}
-		.course__desc {
-			margin: 0;
-		}
-		.course__desc > div {
-			margin-top: 3em;
-		}
-		.course__map {
-			height: 70vh;
-		}
-		.course__text {
-			margin: 1em 0;
-		}
-	}
-	@media (max-width: 43em) {
-		.course__sub-buttons {
-			margin-left: 2em;
-			gap: 0.5em;
-		}
-	}
+  .participate {
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+    background-color: var(--black);
+  }
+  .courses {
+    padding-block: 3em;
+    display: flex;
+    flex-direction: column;
+  }
+  .course:not(:first-child) {
+    margin-top: 3em;
+  }
+  .course {
+    display: flex;
+    justify-content: space-between;
+  }
+  .course__desc,
+  .course__map {
+    width: 48%;
+  }
+  .course__desc {
+    margin: 1em 0;
+  }
+  .course__desc > div:last-child {
+    margin-top: 3em;
+  }
+  .course__desc > div:last-child::before {
+    content: "";
+    display: block;
+    margin-bottom: 3em;
+    height: 1px;
+    width: 100%;
+    background-color: var(--white);
+  }
+  .course__map {
+    overflow: hidden;
+  }
+  .course__title {
+    font-size: 2.3em;
+  }
+  .course__text {
+    margin: 2em 0;
+  }
+  .course__btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .course__sub-buttons {
+    display: flex;
+    gap: 1em;
+  }
+  .course__sub-buttons .btn:not(:first-child) {
+    margin-left: 1em;
+  }
+  @media (max-width: 816px) {
+    .course {
+      flex-direction: column;
+    }
+    .course__desc,
+    .course__map {
+      width: 100%;
+    }
+    .course__desc {
+      margin: 0;
+    }
+    .course__desc > div {
+      margin-top: 3em;
+    }
+    .course__map {
+      height: 70vh;
+    }
+    .course__text {
+      margin: 1em 0;
+    }
+  }
+  @media (max-width: 43em) {
+    .course__sub-buttons {
+      margin-left: 2em;
+      gap: 0.5em;
+    }
+  }
 </style>

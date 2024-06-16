@@ -8,26 +8,26 @@ import Gallery from "../components/Index/Gallery.astro";
 import Social from "../components/Index/Social.astro";
 import Registration from "../components/Index/Registration.astro";
 import Footer from "../components/Footer.astro";
-import data from "../content/data.json";
+import data from "../content/index/data.json";
 ---
 
 <Layout
-	title={data.pages.index.head.title}
-	description={data.pages.index.head.description}
+  title={data.pages.index.head.title}
+  description={data.pages.index.head.description}
 >
-	<Header />
-	<main>
-		<Info />
-		<Video />
-		<Registration />
-		<Gallery />
-		<!-- <Partner /> -->
-		<Social />
-	</main>
-	<Footer />
+  <Header />
+  <main>
+    <Info />
+    <Video />
+    <Registration />
+    <Gallery />
+    <!-- <Partner /> -->
+    <Social />
+  </main>
+  <Footer />
 </Layout>
 
 <script>
-	import * as amplitude from "@amplitude/analytics-browser";
-	amplitude.init("e321a1d48c8cc3e3603810646b1a7556");
+  import * as amplitude from "@amplitude/analytics-browser";
+  amplitude.init("e321a1d48c8cc3e3603810646b1a7556");
 </script>

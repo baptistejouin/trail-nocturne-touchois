@@ -1,26 +1,26 @@
 ---
-import data from "../../content/data.json";
+import data from "../../content/index/data.json";
 ---
 
 <section class="container" id="video">
-	<h2>{data.pages.index.content.video.title}</h2>
-	<iframe
-		width="560"
-		height="315"
-		src={data.pages.index.content.video.src}
-		title={data.pages.index.content.video.title}
-		frameborder="0"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-		allowfullscreen></iframe>
+  <h2>{data.pages.index.content.video.title}</h2>
+  <iframe
+    width="560"
+    height="315"
+    src={data.pages.index.content.video.src}
+    title={data.pages.index.content.video.title}
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen></iframe>
 </section>
 
 <style>
-	section {
-		padding-block: 35px;
-	}
-	iframe {
-		margin-top: 1.5rem;
-		width: 100%;
-		aspect-ratio: 16/9;
-	}
+  section {
+    padding-block: 35px;
+  }
+  iframe {
+    margin-top: 1.5rem;
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
 </style>

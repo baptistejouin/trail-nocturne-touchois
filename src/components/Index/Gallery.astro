@@ -1,159 +1,160 @@
 ---
 import Anchor from "../Anchor.astro";
-import { Picture } from "@astrojs/image/components";
-import data from "../../content/data.json";
+import data from "../../content/index/data.json";
 ---
 
 <section id="gallery" class="container">
-	<h2>Le TNT en <strong>images</strong></h2>
-	<div class="photos">
-		{
-			data.pages.index.content.gallery.urls.map((path) => (
-				<div class="photo">
-					<Picture
-						class="js-openEnlarge"
-						src={path}
-						alt="Photo du TNT"
-						loading="lazy"
-						widths={[300, 1200, 1800]}
-						sizes="(max-width: 816px) 100vw, (max-width: 992px) 50vw, 25vw"
-						aspectRatio="3:2"
-					/>
-				</div>
-			))
-		}
-	</div>
-	<div class="see-more">
-		<Anchor
-			href={data.pages.index.content.gallery.button.href}
-			black
-			targetBlank
-		>
-			{data.pages.index.content.gallery.button.label}
-		</Anchor>
-	</div>
+  <h2>Le TNT en <strong>images</strong></h2>
+  <div class="photos">
+    {
+      data.pages.index.content.gallery.urls.map((path) => (
+        <div class="photo">
+          <img
+            class="js-openEnlarge"
+            src={path}
+            alt="Photo du TNT"
+            loading="lazy"
+          />
+        </div>
+      ))
+    }
+  </div>
+  <div class="see-more">
+    <Anchor
+      href={data.pages.index.content.gallery.button.href}
+      black
+      targetBlank
+    >
+      {data.pages.index.content.gallery.button.label}
+    </Anchor>
+  </div>
 </section>
 
 <style>
-	.photos {
-		margin-top: 2em;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
-	.photo {
-		width: calc((100% / 4) - 3 * 0.25em);
-		max-height: 400px;
-		object-fit: cover;
-		overflow: hidden;
-		margin: 0.5em 0;
-		aspect-ratio: 3 / 2;
-		cursor: zoom-in;
-	}
-	.see-more {
-		display: flex;
-		justify-content: center;
-		margin-top: 2em;
-	}
-	@media (min-width: 816px) and (max-width: 62em) {
-		.photo {
-			width: calc((100% / 2) - 3 * 0.25em);
-			display: none;
-		}
-		.photo:nth-child(-n + 6) {
-			display: block;
-		}
-	}
-	@media (max-width: 816px) {
-		.photo {
-			width: 100%;
-			display: none;
-		}
-		.photo:nth-child(-n + 4) {
-			display: block;
-		}
-	}
+  .photos {
+    margin-top: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .photo {
+    width: calc((100% / 4) - 3 * 0.25em);
+    max-height: 400px;
+    overflow: hidden;
+    margin: 0.5em 0;
+    aspect-ratio: 3 / 2;
+    cursor: zoom-in;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .see-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+  }
+  @media (min-width: 816px) and (max-width: 62em) {
+    .photo {
+      width: calc((100% / 2) - 3 * 0.25em);
+      display: none;
+    }
+    .photo:nth-child(-n + 6) {
+      display: block;
+    }
+  }
+  @media (max-width: 816px) {
+    .photo {
+      width: 100%;
+      display: none;
+    }
+    .photo:nth-child(-n + 4) {
+      display: block;
+    }
+  }
 </style>
 
 <style is:global>
-	.enlarge__viewer {
-		z-index: 999;
-		cursor: zoom-out;
-		position: fixed;
-		background-color: rgba(24, 24, 24, 0.824);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 100%;
-		height: 100%;
-		bottom: 0;
-		right: 0;
-	}
-	.enlarge__container {
-		position: relative;
-		display: flex;
-		justify-content: center;
-		padding: 4em;
-		height: 100%;
-		width: 100%;
-	}
-	.enlarge__container img {
-		width: 100%;
-		object-fit: contain;
-		max-height: none;
-	}
-	.enlarge__close {
-		position: absolute;
-		top: 0.5em;
-		right: 0.5em;
-		line-height: 0.5em;
-		font-size: 3em;
-		text-decoration: none;
-		color: var(--white);
-	}
+  .enlarge__viewer {
+    z-index: 999;
+    cursor: zoom-out;
+    position: fixed;
+    background-color: rgba(24, 24, 24, 0.824);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+  }
+  .enlarge__container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 4em;
+    height: 100%;
+    width: 100%;
+  }
+  .enlarge__container img {
+    width: 100%;
+    object-fit: contain;
+    max-height: none;
+  }
+  .enlarge__close {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    line-height: 0.5em;
+    font-size: 3em;
+    text-decoration: none;
+    color: var(--white);
+  }
 </style>
 
 <script>
-	const openEnlarge = (source: string, alt: string) => {
-		if (screen.width < 550) {
-			return;
-		}
-		const div = document.createElement("div");
-		div.classList.add("enlarge__viewer");
-		div.setAttribute("title", "Fermer l'aperçu");
+  const openEnlarge = (source: string, alt: string) => {
+    if (screen.width < 550) {
+      return;
+    }
+    const div = document.createElement("div");
+    div.classList.add("enlarge__viewer");
+    div.setAttribute("title", "Fermer l'aperçu");
 
-		const container = document.createElement("div");
-		container.classList.add("enlarge__container");
+    const container = document.createElement("div");
+    container.classList.add("enlarge__container");
 
-		const close = document.createElement("button");
-		close.classList.add("enlarge__close");
-		close.innerText = "×";
+    const close = document.createElement("button");
+    close.classList.add("enlarge__close");
+    close.innerText = "×";
 
-		const img = document.createElement("img");
-		img.setAttribute("src", source);
-		img.setAttribute("alt", alt);
-		img.setAttribute("title", alt);
+    const img = document.createElement("img");
+    img.setAttribute("src", source);
+    img.setAttribute("alt", alt);
+    img.setAttribute("title", alt);
 
-		container.appendChild(close);
-		container.appendChild(img);
-		div.appendChild(container);
+    container.appendChild(close);
+    container.appendChild(img);
+    div.appendChild(container);
 
-		div.addEventListener("click", closeEnlarge);
+    div.addEventListener("click", closeEnlarge);
 
-		document.body.appendChild(div);
-	};
+    document.body.appendChild(div);
+  };
 
-	const closeEnlarge = () => {
-		const elem = document.querySelector(".enlarge__viewer");
-		if (elem && elem.parentNode) {
-			elem.parentNode.removeChild(elem);
-		}
-	};
+  const closeEnlarge = () => {
+    const elem = document.querySelector(".enlarge__viewer");
+    if (elem && elem.parentNode) {
+      elem.parentNode.removeChild(elem);
+    }
+  };
 
-	document.querySelectorAll(".js-openEnlarge").forEach((elem) => {
-		elem.addEventListener("click", (e) => {
-			const target = e.target as HTMLImageElement;
-			openEnlarge(target.src || "", target.alt);
-		});
-	});
+  document.querySelectorAll(".js-openEnlarge").forEach((elem) => {
+    elem.addEventListener("click", (e) => {
+      const target = e.target as HTMLImageElement;
+      openEnlarge(target.src || "", target.alt);
+    });
+  });
 </script>

@@ -1,256 +1,255 @@
 ---
-import data from "../../content/data.json";
+import data from "../../content/index/data.json";
 ---
 
 <header>
-	<nav id="navbar" class="nav container">
-		<ul class="nav__links" id="js-nav">
-			<a class="nav__close js-close_nav"
-				><div class="icon icon-close icon--white"></div></a
-			>
-			<li class="nav__link">
-				<a href="#info" class="js-close_nav">Info</a>
-			</li>
-			<li class="nav__link">
-				<a href="#gallery" class="js-close_nav">Galerie</a>
-			</li>
-			<li class="nav__link">
-				<a href="#video" class="js-close_nav">Vidéo</a>
-			</li>
-			<li class="nav__link">
-				<a href="mailto:contact@tnt-lestouches.fr" class="js-close_nav"
-					>Contact</a
-				>
-			</li>
-			<li class="nav__link">
-				<a
-					class="btn btn--small js-close_nav"
-					href={data.pages.index.global.registration_link}
-					>Inscription</a
-				>
-			</li>
-		</ul>
-		<button class="nav__icon js-open_nav"
-			><div class="icon icon-menu icon--white"></div></button
-		>
-	</nav>
-	<section class="head container">
-		<h1 class="head__title">
-			Trail<br />Nocturne<br />Touchois
-		</h1>
-		<span class="head__subtitle"
-			>{data.pages.index.content.header.edition_number}ème édition</span
-		>
-		<h2 class="head__date">
-			{data.pages.index.content.header.edition_date}
-		</h2>
-	</section>
-	<div class="header-skew"></div>
+  <nav id="navbar" class="nav container">
+    <ul class="nav__links" id="js-nav">
+      <a class="nav__close js-close_nav"
+        ><div class="icon icon-close icon--white"></div></a
+      >
+      <li class="nav__link">
+        <a href="#info" class="js-close_nav">Info</a>
+      </li>
+      <li class="nav__link">
+        <a href="#gallery" class="js-close_nav">Galerie</a>
+      </li>
+      <li class="nav__link">
+        <a href="#video" class="js-close_nav">Vidéo</a>
+      </li>
+      <li class="nav__link">
+        <a href="mailto:contact@tnt-lestouches.fr" class="js-close_nav"
+          >Contact</a
+        >
+      </li>
+      <li class="nav__link">
+        <a
+          class="btn btn--small js-close_nav"
+          href={data.pages.index.global.registration_link}>Inscription</a
+        >
+      </li>
+    </ul>
+    <button class="nav__icon js-open_nav"
+      ><div class="icon icon-menu icon--white"></div></button
+    >
+  </nav>
+  <section class="head container">
+    <h1 class="head__title">
+      Trail<br />Nocturne<br />Touchois
+    </h1>
+    <span class="head__subtitle"
+      >{data.pages.index.content.header.edition_number}ème édition</span
+    >
+    <h2 class="head__date">
+      {data.pages.index.content.header.edition_date}
+    </h2>
+  </section>
+  <div class="header-skew"></div>
 </header>
 
 <style lang="scss">
-	.header-skew {
-		background: linear-gradient(
-			to left bottom,
-			rgba(255, 255, 255, 0) 49.5%,
-			#fff 50%
-		);
-		width: 100%;
-		height: 70px;
-		position: absolute;
-		bottom: 0;
-	}
-	header {
-		position: relative;
-		height: calc(80% + 70px);
-		min-height: 500px;
-		background: center / cover no-repeat var(--black)
-			url("../img/banner-header.jpeg");
-		color: var(--white);
-	}
-	.nav {
-		padding-block: 2em;
-		display: flex;
-		justify-content: flex-end;
+  .header-skew {
+    background: linear-gradient(
+      to left bottom,
+      rgba(255, 255, 255, 0) 49.5%,
+      #fff 50%
+    );
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    bottom: 0;
+  }
+  header {
+    position: relative;
+    height: calc(80% + 70px);
+    min-height: 500px;
+    background: center / cover no-repeat var(--black)
+      url("../img/banner-header.jpeg");
+    color: var(--white);
+  }
+  .nav {
+    padding-block: 2em;
+    display: flex;
+    justify-content: flex-end;
 
-		@media (max-width: 62em) {
-			padding-block: 0em;
-			padding-top: 2em;
-		}
-	}
-	.icon {
-		width: 3rem;
-		height: 3rem;
-	}
-	.nav__links {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		text-transform: uppercase;
-		gap: 2em;
-	}
-	.nav__link {
-		font-size: 1.2rem;
-	}
-	.nav__icon {
-		display: none;
-		font-size: 3em;
-	}
-	.head {
-		margin-top: 0 !important;
-		margin-bottom: 0 !important;
-		display: flex;
-		flex-direction: column;
-	}
-	.head__title {
-		position: relative;
-		text-transform: uppercase;
-		font-size: clamp(4rem, 8vw, 5.5rem);
-		font-weight: 600;
-		color: var(--white);
-		display: inline;
-	}
-	.head__subtitle {
-		width: max-content;
-		font-weight: 500;
-		font-size: clamp(0.8rem, 1.4vw, 1rem);
-		padding: 0.25em 1.5em;
-		background-color: var(--primary-color);
-	}
-	.head__date {
-		color: var(--white);
-		margin-top: 1.5rem;
-		text-transform: uppercase;
-	}
-	.head__date::after {
-		content: none;
-	}
-	.high-sponsors {
-		display: flex;
-		align-items: center;
-	}
-	.sponsor {
-		height: 4em;
-		filter: saturate(0);
-	}
-	.sponsor:hover {
-		filter: saturate(1);
-		transition: filter 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-	}
-	.sponsor img,
-	.sponsor img {
-		height: 100%;
-		width: auto;
-	}
-	.sponsor:not(:last-child) {
-		margin-right: 2em;
-	}
-	.header__text {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-	}
+    @media (max-width: 62em) {
+      padding-block: 0em;
+      padding-top: 2em;
+    }
+  }
+  .icon {
+    width: 3rem;
+    height: 3rem;
+  }
+  .nav__links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    gap: 2em;
+  }
+  .nav__link {
+    font-size: 1.2rem;
+  }
+  .nav__icon {
+    display: none;
+    font-size: 3em;
+  }
+  .head {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    display: flex;
+    flex-direction: column;
+  }
+  .head__title {
+    position: relative;
+    text-transform: uppercase;
+    font-size: clamp(4rem, 8vw, 5.5rem);
+    font-weight: 600;
+    color: var(--white);
+    display: inline;
+  }
+  .head__subtitle {
+    width: max-content;
+    font-weight: 500;
+    font-size: clamp(0.8rem, 1.4vw, 1rem);
+    padding: 0.25em 1.5em;
+    background-color: var(--primary-color);
+  }
+  .head__date {
+    color: var(--white);
+    margin-top: 1.5rem;
+    text-transform: uppercase;
+  }
+  .head__date::after {
+    content: none;
+  }
+  .high-sponsors {
+    display: flex;
+    align-items: center;
+  }
+  .sponsor {
+    height: 4em;
+    filter: saturate(0);
+  }
+  .sponsor:hover {
+    filter: saturate(1);
+    transition: filter 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  .sponsor img,
+  .sponsor img {
+    height: 100%;
+    width: auto;
+  }
+  .sponsor:not(:last-child) {
+    margin-right: 2em;
+  }
+  .header__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
 
-	.nav__close {
-		display: none;
-	}
-	@media (max-width: 62em) {
-		.nav__icon {
-			display: block;
-		}
-		.nav__close {
-			display: block;
-			position: absolute;
-			top: 2rem;
-			right: 2rem;
-		}
-		.nav__links {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			height: 100%;
-			width: 100%;
-			transform: translateX(-100%);
-			position: fixed;
-			top: 0;
-			z-index: 2;
-			left: 0;
-			background-color: var(--black);
-			overflow-x: hidden;
-		}
-		.nav__link:not(:first-child) {
-			margin-left: 0;
-			margin-top: 0.5em;
-		}
-		.nav__link {
-			display: flex;
-			justify-content: center;
-			max-width: 300px;
-			/* width: 75%; */
-			font-size: 2em;
-		}
-		.dropdown {
-			transition: padding-bottom 0.8s;
-			padding: 0;
-		}
-		.dropdown__list {
-			top: 0;
-		}
-		.dropdown:hover .dropdown__list {
-			bottom: 0;
-			background: none;
-			transition: opacity 1s;
-			transition-delay: 0.3s;
-			margin-top: 1.5em;
-		}
-		.dropdown:hover {
-			padding-bottom: 4.5em;
-		}
-		.dropdown__item {
-			font-size: 1.3rem;
-			color: var(--white);
-		}
-		.dropdown__item:hover {
-			background: none;
-		}
-		.head {
-			padding-top: 2em;
-		}
-		.header__text {
-			align-items: center;
-		}
-		.high-sponsors {
-			justify-content: flex-end;
-		}
-	}
+  .nav__close {
+    display: none;
+  }
+  @media (max-width: 62em) {
+    .nav__icon {
+      display: block;
+    }
+    .nav__close {
+      display: block;
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+    }
+    .nav__links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      transform: translateX(-100%);
+      position: fixed;
+      top: 0;
+      z-index: 2;
+      left: 0;
+      background-color: var(--black);
+      overflow-x: hidden;
+    }
+    .nav__link:not(:first-child) {
+      margin-left: 0;
+      margin-top: 0.5em;
+    }
+    .nav__link {
+      display: flex;
+      justify-content: center;
+      max-width: 300px;
+      /* width: 75%; */
+      font-size: 2em;
+    }
+    .dropdown {
+      transition: padding-bottom 0.8s;
+      padding: 0;
+    }
+    .dropdown__list {
+      top: 0;
+    }
+    .dropdown:hover .dropdown__list {
+      bottom: 0;
+      background: none;
+      transition: opacity 1s;
+      transition-delay: 0.3s;
+      margin-top: 1.5em;
+    }
+    .dropdown:hover {
+      padding-bottom: 4.5em;
+    }
+    .dropdown__item {
+      font-size: 1.3rem;
+      color: var(--white);
+    }
+    .dropdown__item:hover {
+      background: none;
+    }
+    .head {
+      padding-top: 2em;
+    }
+    .header__text {
+      align-items: center;
+    }
+    .high-sponsors {
+      justify-content: flex-end;
+    }
+  }
 </style>
 
 <script>
-	const nav = document.getElementById("js-nav");
-	const openNavBtn = document.querySelectorAll(".js-open_nav");
-	const closeNavBtn = document.querySelectorAll(".js-close_nav");
+  const nav = document.getElementById("js-nav");
+  const openNavBtn = document.querySelectorAll(".js-open_nav");
+  const closeNavBtn = document.querySelectorAll(".js-close_nav");
 
-	const openNav = () => {
-		if (nav) {
-			nav.style.transition = ".5s";
-			nav.style.transform = "translateX(0)";
-		}
-	};
+  const openNav = () => {
+    if (nav) {
+      nav.style.transition = ".5s";
+      nav.style.transform = "translateX(0)";
+    }
+  };
 
-	const closeNav = () => {
-		if (nav) {
-			nav.style.transform = "";
-			setTimeout(function () {
-				nav.removeAttribute("style");
-			}, 500);
-		}
-	};
+  const closeNav = () => {
+    if (nav) {
+      nav.style.transform = "";
+      setTimeout(function () {
+        nav.removeAttribute("style");
+      }, 500);
+    }
+  };
 
-	openNavBtn.forEach((btn) => {
-		btn.addEventListener("click", openNav);
-	});
-	closeNavBtn.forEach((btn) => {
-		btn.addEventListener("click", closeNav);
-	});
-	window.addEventListener("resize", closeNav);
+  openNavBtn.forEach((btn) => {
+    btn.addEventListener("click", openNav);
+  });
+  closeNavBtn.forEach((btn) => {
+    btn.addEventListener("click", closeNav);
+  });
+  window.addEventListener("resize", closeNav);
 </script>

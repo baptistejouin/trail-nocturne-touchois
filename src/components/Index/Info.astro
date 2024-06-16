@@ -1,91 +1,89 @@
 ---
 import Anchor from "../Anchor.astro";
-import data from "../../content/data.json";
+import data from "../../content/index/data.json";
 ---
 
 <section class="container" id="info">
-	<h2>
-		Rendez-vous en <strong
-			>{data.pages.index.content.info.edition_year}</strong
-		>&nbsp;!
-	</h2>
-	<div class="header__text">
-		<div>
-			<h3>Le TNT, c'est quoi&nbsp;?</h3>
-			<p>
-				Le TNT est un Trail de nuit organisé par le club "Les Touches
-				Running". Les parcours 12km et 24km empruntent les routes et
-				chemins de la commune des Touches.
-			</p>
-			<h3>Informations importantes</h3>
-			<ul>
-				<li>
-					Un échauffement animé est prévu avant le départ du 12km.
-					Plusieurs animations le long du parcours.
-				</li>
-				<li>
-					L’arrivée se fait en salle avec bar et restauration sur
-					place
-				</li>
-				<li>Une lampe frontale est à prévoir.</li>
-				<li>
-					Un t-shirt manches longues est remis à chaque coureur lors
-					de la remise du dossard
-				</li>
-				<li>Une consigne est prévue sur place.</li>
-			</ul>
-			<h3>Quand s'inscrire&nbsp;?</h3>
-			<p>
-				Ouverture des inscriptions le <strong
-					>{
-						data.pages.index.content.info.registration_opening_date
-					}</strong
-				> et clôture des inscriptions le <strong
-					>{
-						data.pages.index.content.info.registration_closing_date
-					}</strong
-				>
-				ou lorsque les 800 premiers dossiers complets seront atteints. Majoration
-				+2€ pour le 12km et +1€ pour le 24km à partir du {
-					data.pages.index.content.info.increase_date
-				}.
-			</p>
-			<h3>Remise des dossards</h3>
-			<p>
-				{data.pages.index.content.info.race_numbers_paragraph}<br />
-			</p>
+  <h2>
+    {data.pages.index.content.info.edition_title}
+  </h2>
+  <div class="header__text">
+    <div>
+      <h3>Le TNT, c'est quoi&nbsp;?</h3>
+      <p>
+        Le TNT est un Trail de nuit organisé par le club "Les Touches Running".
+        Les parcours 12km et 24km empruntent les routes et chemins de la commune
+        des Touches.
+      </p>
+      <p>
+        {data.pages.index.content.info.edition_special_description}
+      </p>
+      <h3>Informations importantes</h3>
+      <ul>
+        <li>
+          Un échauffement animé est prévu avant le départ du 12km. Plusieurs
+          animations le long du parcours.
+        </li>
+        <li>
+          L’arrivée se fait en salle ou vous retrouverez bar, consignes, douches
+          et restauration sur place
+        </li>
+        <li>Ravitaillement en boissons, soupe chaude, et solides.</li>
+        <li>Une lampe frontale est à prévoir.</li>
+        <li>
+          Un t-shirt manches longues est remis à chaque coureur lors de la
+          remise du dossard
+        </li>
+        <li>Une consigne est prévue sur place.</li>
+      </ul>
+      <h3>Quand s'inscrire&nbsp;?</h3>
+      <p>
+        Ouverture des inscriptions le <strong
+          >{data.pages.index.content.info.registration_opening_date}</strong
+        > et clôture des inscriptions le <strong
+          >{data.pages.index.content.info.registration_closing_date}</strong
+        >
+        ou lorsque les 800 premiers dossiers complets seront atteints. Majoration
+        +2€ pour le 12km et +1€ pour le 24km à partir du {
+          data.pages.index.content.info.increase_date
+        }.
+      </p>
+      <h3>Remise des dossards</h3>
+      <p>
+        {data.pages.index.content.info.race_numbers_paragraph}<br />
+      </p>
 
-			<div class="header__btn">
-				{
-					data.pages.index.content.info.buttons.map((button) => (
-						<Anchor href={button.href} black>
-							{button.label}
-						</Anchor>
-					))
-				}
-			</div>
-		</div>
-	</div>
+      <div class="header__btn">
+        {
+          data.pages.index.content.info.buttons.map((button) => (
+            <Anchor href={button.href} black>
+              {button.label}
+            </Anchor>
+          ))
+        }
+      </div>
+    </div>
+  </div>
 </section>
 
 <style>
-	.header__btn {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 1.2rem;
-		margin-top: 2em;
-	}
-	h3 {
-		margin-block: 1.2rem 0.5rem;
-	}
-	li {
-		list-style: disc;
-		margin-inline-start: 1em;
-		padding-inline-start: 0.5em;
-	}
-	@media screen and (max-width: 768px) {
-		.header__btn {
-			justify-content: center;
-		}
-	}
+  .header__btn {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 2em;
+  }
+  h3 {
+    margin-block: 1.2rem 0.5rem;
+  }
+  li {
+    list-style: disc;
+    margin-inline-start: 1em;
+    padding-inline-start: 0.5em;
+  }
+  @media screen and (max-width: 768px) {
+    .header__btn {
+      justify-content: center;
+    }
+  }
 </style>
